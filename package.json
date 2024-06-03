@@ -1,7 +1,7 @@
 {
   "name": "electron-js",
   "version": "1.0.0",
-  "description": "electron JS first app",
+  "description": "electron JS second app",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -10,6 +10,8 @@
   "author": "gauth",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^30.0.9"
+    "@electron-forge/cli": "^7.4.0",
+    "electron": "^30.0.9",
+    "electron-reload": "^2.0.0-alpha.1"
   }
 }
