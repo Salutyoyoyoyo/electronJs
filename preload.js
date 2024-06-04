@@ -1,4 +1,4 @@
-const {contextBridge} = require('electron');
+const {contextBridge,ipcRenderer} = require('electron');
 
 contextBridge.exposeInMainWorld('version', {
     node: () => process.versions.node,
@@ -6,3 +6,10 @@ contextBridge.exposeInMainWorld('version', {
     electron: () => process.versions.electron,
 
 })
+
+contextBridge.exposeInMainWorld('api', {
+    addUser: (username, email) => ipcRenderer.invoke('add-user', username, email),
+    getUsers: () => ipcRenderer.invoke('get-users'),
+    authenticateUser: (name, email) => ipcRenderer.invoke('authenticate-user', name, email)
+});
+
